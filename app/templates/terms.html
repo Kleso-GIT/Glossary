@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Terms</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <h1>All Terms</h1>
+    <ul>
+        {% for term in terms %}
+        <li>
+            <strong>{{ term.term }}:</strong> {{ term.description }}
+
+            <button onclick="deleteTerm('{{ term.term }}')" class="button delete">Delete</button>
+
+            <button onclick="window.location.href='/edit/{{ term.term }}'" class="button edit">Edit</button>
+        </li>
+        {% endfor %}
+    </ul>
+    <a href="/">Back</a>
+
+    <script>
+        async function deleteTerm(term) {
+            const confirmation = confirm("Are you sure you want to delete this term?");
+            if (confirmation) {
+                const response = await fetch(`/glossary/${term}`, {
+                    method: 'DELETE',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                });
+
+                if (response.ok) {
+                    alert("Term deleted successfully!");
+                    window.location.reload();
+                } else {
+                    alert("Failed to delete term.");
+                }
+            }
+        }
+    </script>
+</body>
+</html>

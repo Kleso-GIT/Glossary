@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Term</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <h1>Add New Term</h1>
+    <form action="/glossary/" method="post">
+        <label for="term">Term:</label>
+        <input type="text" id="term" name="term" required>
+
+        <label for="description">Description:</label>
+        <textarea id="description" name="description" rows="4"></textarea>
+
+        <button type="submit">Add Term</button>
+    </form>
+<script src="/static/scripts.js"></script>
+</body>
+</html>
+
+
+

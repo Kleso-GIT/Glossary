@@ -1,0 +1,172 @@
+/* Общие стили */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+a {
+    text-decoration: none;
+    color: #0066cc;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.menu-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.menu a {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f0f0f0;
+    color: #333;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.menu a:hover {
+    background-color: #0066cc;
+    color: white;
+}
+
+/* Стили для страницы add.html */
+form {
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+form label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #333;
+}
+
+form input[type="text"],
+form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+form button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #0066cc;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+form button:hover {
+    background-color: #004d99;
+}
+
+/* Стили для страницы terms.html */
+.term-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    background-color: #fff;
+}
+
+.term-item h2 {
+    margin: 0;
+    color: #333;
+}
+
+.term-item p {
+    margin: 0;
+    color: #666;
+}
+
+.term-item .actions {
+    display: flex;
+    gap: 10px;
+}
+
+.term-item button {
+    padding: 5px 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.term-item button.edit {
+    background-color: #ffc107;
+    color: #fff;
+}
+
+.term-item button.edit:hover {
+    background-color: #e0a800;
+}
+
+.term-item button.delete {
+    background-color: #dc3545;
+    color: #fff;
+}
+
+.term-item button.delete:hover {
+    background-color: #b02a37;
+}
+
+.button {
+    padding: 10px 20px;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin: 5px;
+    font-size: 14px;
+    border: none; /* Убираем стандартные границы кнопок */
+    cursor: pointer;
+    display: inline-block;
+}
+
+/* Стиль для кнопки удаления */
+.button.delete {
+    background-color: #f44336;  /* Красный для удаления */
+}
+
+.button.delete:hover {
+    background-color: #e53935;
+}
+
+/* Стиль для кнопки редактирования */
+.button.edit {
+    background-color: #4CAF50;  /* Зеленый для редактирования */
+}
+
+.button.edit:hover {
+    background-color: #45a049;
+}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Term</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <h1>Edit Term: {{ term.term }}</h1>
+    <form id="editForm">
+        <label for="term">Term:</label>
+        <input type="text" id="term" name="term" value="{{ term.term }}" readonly>
+        <br>
+        <label for="description">Description:</label>
+        <textarea id="description" name="description">{{ term.description or "" }}</textarea>
+        <br>
+        <button type="submit">Update Term</button>
+    </form>
+    <a href="/terms">Back to All Terms</a>
+
+    <script>
+        document.getElementById("editForm").addEventListener("submit", async function(event) {
+            event.preventDefault();
+
+            const term = document.getElementById("term").value;
+            const description = document.getElementById("description").value;
+
+            const response = await fetch(`/glossary/${term}`, {
+                method: "PUT",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({ description })
+            });
+
+            if (response.ok) {
+                alert("Term updated successfully!");
+                window.location.href = "/";
+            } else {
+                alert("Error updating term");
+            }
+        });
+    </script>
+</body>
+</html>
